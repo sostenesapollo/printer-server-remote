@@ -15,8 +15,8 @@ io.on('connection', async function(socket){
   socket.on('disconnect', ()=>{ console.log('user disconnected');});
 })
 
-server.listen(3001, ()=> {
-  console.log('Waiting for connection')
+server.listen(process.env.SOCKET_IO_PORT || 3006, ()=> {
+  console.log(`Waiting for connection socket io at ${process.env.SOCKET_IO_PORT || 3006}`)
 });
 
 // Server
@@ -34,7 +34,7 @@ fastify.post('/print', async (request, reply) => {
 
 const start = async () => {
   try {
-    await fastify.listen({ port: 3000 })
+    await fastify.listen({ port: process.env.PORT || 3006 })
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
