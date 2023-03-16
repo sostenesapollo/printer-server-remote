@@ -27,6 +27,10 @@ io.on('connection', async function(socket){
       activePrintersByCompany.set(_socket.company_id, [])
     });
 
+    socket.on('error', (error) => { 
+      console.log(`Socket ${socket.id} error ${error}`);
+    });
+
 });
 
 const port_socket_id = process.env.PORT_SOCKET_ID || 3007
