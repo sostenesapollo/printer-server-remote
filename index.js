@@ -29,7 +29,7 @@ io.on('connection', async function(socket){
 
 });
 
-server.listen(3001, ()=> {
+server.listen(3001,'0.0.0.0', ()=> {
     console.log('Waiting for connection')
 });
 
