@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "fastify": "^4.14.1",
+    "socket.io": "^4.6.1"
+  },
+  "scripts": {
+    "dev": "nodemon index.js | pino-pretty"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21",
+    "pino-pretty": "^10.0.0"
+  }
+}
