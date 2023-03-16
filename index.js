@@ -70,7 +70,7 @@ fastify.post('/print', async (request, reply) => {
 const start = async () => {
   try {
     console.log('Waiting for connection at port API:', process.env.PORT || 3010)
-    await fastify.listen({ port: process.env.PORT || 3010 })
+    await fastify.listen({ port: process.env.PORT || 3010, host: '0.0.0.0' })
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
