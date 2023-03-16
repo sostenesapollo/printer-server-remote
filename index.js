@@ -32,7 +32,7 @@ io.on('connection', async function(socket){
 const port_socket_id = process.env.PORT_SOCKET_ID || 3007
 
 server.listen(port_socket_id ,'0.0.0.0', ()=> {
-    console.log('Waiting for connection at port', port_socket_id)
+    console.log('Waiting for connection at port socket io:', port_socket_id)
 });
 
 // Server
@@ -69,6 +69,7 @@ fastify.post('/print', async (request, reply) => {
 
 const start = async () => {
   try {
+    console.log('Waiting for connection at port API:', process.env.PORT || 3010)
     await fastify.listen({ port: process.env.PORT || 3010 })
   } catch (err) {
     fastify.log.error(err)
